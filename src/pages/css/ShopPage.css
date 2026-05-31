@@ -1,14 +1,23 @@
-.shop-grid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 1.5rem;
-	padding: 2rem;
+.shop-scroller {
+	display: flex;
+	gap: 1.25rem;
+	overflow-x: auto;
+	padding: 1.5rem 2rem;
+	scroll-snap-type: x mandatory;
+	-webkit-overflow-scrolling: touch;
+}
+
+.shop-scroller::-webkit-scrollbar {
+	height: 4px;
+}
+.shop-scroller::-webkit-scrollbar-thumb {
+	background: #ddd;
+	border-radius: 2px;
 }
 
 .product-card {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
+	flex: 0 0 220px; /* fixed width so cards don't shrink */
+	scroll-snap-align: start;
 }
 
 .product-card h3 {

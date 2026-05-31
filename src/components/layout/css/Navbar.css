@@ -7,5 +7,49 @@
 
 .right-links {
 	display: flex;
-	gap: 1rem;
+	justify-content: center;
+	align-items: center;
+	gap: 1.6rem;
+}
+
+.home {
+	color: black;
+	font-weight: 300;
+	font-size: 1.4rem;
+}
+
+.home:hover {
+	text-decoration: underline;
+}
+
+.mart {
+	color: red;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--text-h);
+}
+
+.cart-link {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	width: 56px;
+	flex-shrink: 0;
+}
+
+.cart-qty {
+	display: inline-block;
+	min-width: 18px;
+	text-align: right;
+	/* font-family: var(--mono); */
+	font-variant-numeric: tabular-nums;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }

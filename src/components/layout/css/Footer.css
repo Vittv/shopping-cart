@@ -1,5 +1,24 @@
 .footer {
-	background-color: #1f2028;
+	font-size: 0.8rem;
+	background-color: var(--border);
 	margin-top: auto;
 	padding: 1rem;
+	background-color: #171719;
+	color: #cdcdcd;
+}
+
+.contact-and-address {
+	display: flex;
+	text-align: left;
+	margin-top: auto;
+	gap: 2rem;
+}
+
+.fa-icon {
+	margin-right: 10px;
+	color: #cdcdcd;
+}
+
+.fa-icon a:hover {
+	color: blue;
 }

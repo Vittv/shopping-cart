@@ -1,16 +1,51 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faAt } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./css/Footer.css";
 
 const Footer = () => {
   return (
     <>
       <div className="footer">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/Vittv/shopping-cart"
-        >
-          GitHub
-        </a>
+        <div className="contact-and-address">
+          <div className="contact">
+            <p>
+              <FontAwesomeIcon className="fa-icon" icon={faPhone} />
+              (555) 123-4567
+            </p>
+            <p>
+              <FontAwesomeIcon className="fa-icon" icon={faAt} />
+              contact@vittmart.com
+            </p>
+            <p>
+              <FontAwesomeIcon className="fa-icon" icon={faInstagram} />
+              @vittmart
+            </p>
+            <p>
+              <FontAwesomeIcon className="fa-icon" icon={faFacebook} />
+              /vittmart
+            </p>
+            <p>
+              <FontAwesomeIcon className="fa-icon" icon={faGithub} />
+              <a
+                href="https://github.com/Vittv/shopping-cart"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Vittv
+              </a>
+            </p>
+          </div>
+          <div className="address">
+            <p>Vittmart</p>
+            <p>1428 Ambrosia Avenue</p>
+            <p>Williamsburg Brooklyn, NY 11211</p>
+            <p>United States</p>
+          </div>
+        </div>
       </div>
     </>
   );
