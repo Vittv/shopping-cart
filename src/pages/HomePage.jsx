@@ -1,10 +1,22 @@
 import "./css/HomePage.css";
+import { Link } from "react-router-dom";
+import Marquee from "../components/marquee/Marquee";
 
 const HomePage = () => {
   return (
     <>
       <div className="homepage">
-        <h1 className="homepage-headline">Welcome to our store!</h1>
+        <div className="homepage-intro">
+          <h1 className="homepage-headline">Dressed for every moment.</h1>
+          <p className="homepage-tagline">From first coffee to last dance.</p>
+        </div>
+        <Marquee />
+        <div className="go-shopping">
+          <h2>Explore our latest collection</h2>
+          <Link to="/shop" className="shop-now">
+            Shop now
+          </Link>
+        </div>
         <div className="newsletter">
           <h2>Sign up for our newsletter</h2>
           <p>New arrivals and offers, straight to your inbox.</p>

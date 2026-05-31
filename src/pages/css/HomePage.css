@@ -4,8 +4,49 @@
 	min-height: 100svh;
 }
 
+.homepage-intro {
+	padding: 1rem;
+}
+
 .homepage-headline {
 	font-weight: 300;
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.homepage-tagline {
+	font-weight: 300;
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.go-shopping {
+	padding: 1rem;
+}
+
+.go-shopping h2 {
+	padding: 1rem;
+	font-weight: 300;
+}
+
+.shop-now {
+	display: inline-block;
+	font-size: 1rem;
+	padding: 1rem 1rem;
+	margin-bottom: 1rem;
+	background-color: var(--accent);
+	border: none;
+	border-radius: 6px;
+	transition: transform 0.2s ease;
+	text-decoration: none;
+	color: #fff;
+	font-weight: 500;
+}
+
+.shop-now:hover {
+	color: #fff;
+	transform: scale(1.1);
+	cursor: pointer;
 }
 
 .newsletter {
@@ -14,6 +55,15 @@
 	gap: 0.75rem;
 	padding: 3rem 1rem;
 	border-top: 1px solid var(--border);
+}
+
+.newsletter h2 {
+	font-weight: 400;
+}
+
+.newsletter p {
+	margin-bottom: 1rem;
+	font-weight: 300;
 }
 
 .newsletter-form {
@@ -47,10 +97,16 @@
 	border-radius: 6px;
 	cursor: pointer;
 	flex-shrink: 0;
+	transition: transform 0.2s ease;
+}
+
+.newsletter-form button:hover {
+	transform: scale(1.1);
 }
 
 .map-wrapper {
 	margin-top: auto;
+	border-top: 1px solid var(--border);
 }
 
 @media (max-width: 480px) {

@@ -1,0 +1,42 @@
+.marquee-wrapper {
+	overflow: hidden;
+	width: 100%;
+	-webkit-mask-image: linear-gradient(
+		to right,
+		transparent,
+		black 10%,
+		black 90%,
+		transparent
+	);
+	mask-image: linear-gradient(
+		to right,
+		transparent,
+		black 10%,
+		black 90%,
+		transparent
+	);
+}
+
+.marquee-track {
+	display: flex;
+	gap: 12px;
+	width: max-content;
+	animation: marquee 50s linear infinite;
+}
+
+.marquee-img {
+	height: 220px;
+	width: 180px;
+	object-fit: cover;
+	border-radius: 8px;
+	flex-shrink: 0;
+}
+
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
