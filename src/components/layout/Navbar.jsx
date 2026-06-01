@@ -1,11 +1,27 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
+import { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
 import "./css/Navbar.css";
 
 const Navbar = () => {
   const { totalQuantity } = useCart();
+
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const update = () => {
+      if (!ref.current) return;
+      document.documentElement.style.setProperty(
+        "--navbar-height",
+        `${ref.current.offsetHeight}px`,
+      );
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   return (
     <>

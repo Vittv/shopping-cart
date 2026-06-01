@@ -34,7 +34,8 @@ const ShopPage = () => {
       WOMENS_CATEGORIES.map((cat) =>
         fetch(`https://dummyjson.com/products/category/${cat}`)
           .then((res) => res.json())
-          .then((data) => ({ cat, products: data.products })),
+          .then((data) => ({ cat, products: data.products }))
+          .catch(() => ({ cat, products: [] })),
       ),
     ).then((results) => {
       const byCategory = {};
@@ -72,7 +73,8 @@ const ShopPage = () => {
             className="category-nav-btn"
             onClick={() => {
               const el = document.getElementById(cat);
-              const offset = 110; // adjust to match navbar + category-nav combined height
+              const navbar = document.querySelector(".navbar");
+              const offset = navbar ? navbar.offsetHeight : 0;
               const top =
                 el.getBoundingClientRect().top + window.scrollY - offset;
               window.scrollTo({ top, behavior: "smooth" });
@@ -154,7 +156,7 @@ const ShopPage = () => {
                     <button
                       className="addtocart-btn"
                       onClick={() => {
-                        addToCart(product.id, quantities[product.id] || 1);
+                        addToCart(product, quantities[product.id] || 1);
                         setQuantities((prev) => ({ ...prev, [product.id]: 1 }));
                         setInputValues((prev) => ({
                           ...prev,
