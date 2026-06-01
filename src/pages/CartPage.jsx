@@ -1,7 +1,7 @@
-import { useCart } from "../context/CartContext";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 import "./css/CartPage.css";
 
 const CartPage = () => {
@@ -36,15 +36,22 @@ const CartPage = () => {
               </p>
             </div>
             <div className="cart-item-controls">
-              <button onClick={() => updateQuantity(product.id, quantity - 1)}>
+              <button
+                type="button"
+                onClick={() => updateQuantity(product.id, quantity - 1)}
+              >
                 -
               </button>
               <span>{quantity}</span>
-              <button onClick={() => updateQuantity(product.id, quantity + 1)}>
+              <button
+                type="button"
+                onClick={() => updateQuantity(product.id, quantity + 1)}
+              >
                 +
               </button>
             </div>
             <button
+              type="button"
               className="cart-remove"
               onClick={() => removeFromCart(product.id)}
             >
@@ -59,7 +66,9 @@ const CartPage = () => {
           <span>{totalQuantity} items</span>
           <span className="cart-total-sum">${totalPrice.toFixed(2)}</span>
         </div>
-        <button className="cart-checkout-btn">Checkout</button>
+        <button type="button" className="cart-checkout-btn">
+          Checkout
+        </button>
       </div>
     </div>
   );

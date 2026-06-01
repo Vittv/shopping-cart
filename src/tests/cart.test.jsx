@@ -1,4 +1,4 @@
-import { renderHook, act } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react";
 import { CartProvider, useCart } from "../context/CartContext";
 
 const wrapper = ({ children }) => <CartProvider>{children}</CartProvider>;

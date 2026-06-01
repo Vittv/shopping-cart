@@ -28,8 +28,8 @@ const Marquee = () => {
   return (
     <div className="marquee-wrapper">
       <div className="marquee-track" ref={trackRef}>
-        {images.map((src, i) => (
-          <img key={i} src={src} alt="" className="marquee-img" />
+        {images.map((src) => (
+          <img key={src} src={src} alt="" className="marquee-img" />
         ))}
       </div>
     </div>

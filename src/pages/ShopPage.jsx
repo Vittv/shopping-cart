@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { useCart } from "../context/CartContext";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
+import { useCart } from "../context/CartContext";
 import "./css/ShopPage.css";
 
 const WOMENS_CATEGORIES = [
@@ -53,7 +53,7 @@ const ShopPage = () => {
 
   const updateQuantity = (id, value) => {
     const parsed = parseInt(value, 10);
-    const clamped = isNaN(parsed) || parsed < 1 ? 1 : parsed;
+    const clamped = Number.isNaN(parsed) || parsed < 1 ? 1 : parsed;
     setQuantities((prev) => ({ ...prev, [id]: clamped }));
     setInputValues((prev) => ({ ...prev, [id]: String(clamped) }));
   };
@@ -69,6 +69,7 @@ const ShopPage = () => {
       <div className="category-nav">
         {WOMENS_CATEGORIES.map((cat) => (
           <button
+            type="button"
             key={cat}
             className="category-nav-btn"
             onClick={() => {
@@ -86,7 +87,11 @@ const ShopPage = () => {
       </div>
       {WOMENS_CATEGORIES.map((cat) => (
         <section key={cat} id={cat} className="category-section">
-          <div className="category-header" onClick={() => toggleCategory(cat)}>
+          <button
+            type="button"
+            className="category-header"
+            onClick={() => toggleCategory(cat)}
+          >
             <h2 className="category-title">
               <FontAwesomeIcon
                 icon={collapsed[cat] ? faChevronRight : faChevronDown}
@@ -94,7 +99,7 @@ const ShopPage = () => {
               />
               {CATEGORY_LABELS[cat]}
             </h2>
-          </div>
+          </button>
           {!collapsed[cat] && (
             <div className="product-grid">
               {(productsByCategory[cat] ?? []).map((product) => (
@@ -109,6 +114,7 @@ const ShopPage = () => {
                   <div className="product-actions">
                     <div className="quantity-buttons">
                       <button
+                        type="button"
                         className="decrement"
                         onClick={() =>
                           updateQuantity(
@@ -142,6 +148,7 @@ const ShopPage = () => {
                         }}
                       />
                       <button
+                        type="button"
                         className="increment"
                         onClick={() =>
                           updateQuantity(
@@ -154,6 +161,7 @@ const ShopPage = () => {
                       </button>
                     </div>
                     <button
+                      type="button"
                       className="addtocart-btn"
                       onClick={() => {
                         addToCart(product, quantities[product.id] || 1);

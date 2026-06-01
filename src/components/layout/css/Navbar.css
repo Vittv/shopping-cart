@@ -24,6 +24,15 @@
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--text-h);
+}
+
 .home a {
 	transition: color 0.2s ease;
 }
@@ -34,15 +43,6 @@
 
 .mart {
 	color: var(--accent);
-}
-
-a {
-	color: inherit;
-	text-decoration: none;
-}
-
-a:hover {
-	color: var(--text-h);
 }
 
 .shop-link {

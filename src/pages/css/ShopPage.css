@@ -51,10 +51,8 @@
 	justify-content: space-between;
 	cursor: pointer;
 	user-select: none;
-}
-
-.category-header:hover .category-title {
-	color: var(--text-h);
+	background-color: transparent;
+	border: none;
 }
 
 .category-title {
@@ -65,6 +63,10 @@
 	font-weight: 300;
 	color: var(--text);
 	margin: 0;
+}
+
+.category-header:hover .category-title {
+	color: var(--text-h);
 }
 
 .product-grid {
