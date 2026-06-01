@@ -27,7 +27,7 @@ const ShopPage = () => {
   const [inputValues, setInputValues] = useState({});
   const [quantities, setQuantities] = useState({});
   const [collapsed, setCollapsed] = useState({});
-  const { addToCart } = useCart();
+  const { addToCart, cart } = useCart();
 
   useEffect(() => {
     Promise.all(
@@ -165,6 +165,9 @@ const ShopPage = () => {
                       }}
                     >
                       Add to cart
+                      {cart[product.id]
+                        ? ` (${cart[product.id].quantity})`
+                        : ""}
                     </button>
                   </div>
                 </div>
