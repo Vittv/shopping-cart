@@ -5,7 +5,7 @@ A store SPA made in React.
 <img width="1920" height="1080" alt="20260601_133858" src="https://github.com/user-attachments/assets/902c49e0-bb5f-4083-a000-8a133b490b2a" />
 
 ### Building
-You can run this app locally by cloning the repo and installing itis dependencies:
+You can run this app locally by cloning the repo and installing its dependencies:
 
 ```bash
 git clone https://github.com/Vittv/shopping-cart.git
